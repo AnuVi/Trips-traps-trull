@@ -1,0 +1,790 @@
+/*=reset
+--------------------------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1.57em;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+img {
+   border:none;
+}
+/*=reset end
+--------------------------------------------------------------------------------------------------------*/
+
+/*=clear
+--------------------------------------------------------------------------------------------------------*/
+.clear:before, .clear:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.clear:after { clear: both; }
+.clear { zoom: 1; }
+
+/*=clear end
+--------------------------------------------------------------------------------------------------------*/
+
+/*=fonts 
+--------------------------------------------------------------------------------------------------------*/
+
+
+@font-face {
+    font-family:  'SketchRockwellRegular';
+    src: url('fonts/sketchrockwell-bold-webfont.eot');
+    src: url('fonts/sketchrockwell-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sketchrockwell-bold-webfont.woff') format('woff'),
+         url('fonts/sketchrockwell-bold-webfont.ttf') format('truetype'),
+         url('fonts/sketchrockwell-bold-webfont.svg#SketchRockwellRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'FuturaBook';
+    src: url('fonts/futura_book_bt-webfont.eot');
+    src: url('fonts/futura_book_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futura_book_bt-webfont.woff') format('woff'),
+         url('fonts/futura_book_bt-webfont.ttf') format('truetype'),
+         url('fonts/futura_book_bt-webfont.svg#FuturaBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*=fonts end 
+--------------------------------------------------------------------------------------------------------*/
+
+
+a{
+	text-decoration:none;
+	color:#95D3E7;
+
+}
+
+a:hover, .act{
+color:#fff;
+
+}
+
+/*=body 
+--------------------------------------------------------------------------------------------------------*/
+body{
+	
+	color:#111;
+	/*background-color:#F2F1B1#ff9900;*/
+	font-family: 'FuturaBook', Verdana, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	/*background-color:#FFff33; F1FAD4 EDE76F*/
+	/*background:url('trips.png') no-repeat;
+	background-position:-215px -125px;*/	
+		 background-position:-20% 0;
+		 background:url('taust.gif');
+
+
+}
+/*=body end
+--------------------------------------------------------------------------------------------------------*/
+#wrap{
+ width:960px;
+ margin:0 auto;
+ min-height:100%;
+ max-height:100%;
+ 
+
+}
+/*=header end
+--------------------------------------------------------------------------------------------------------*/
+#header{
+   width:100%;
+   margin:35px 0 20px;
+}
+
+h1{
+	font-family:'SketchRockwellRegular';
+	/*color:#4D6378;*/
+	color:  #fff;
+	font-size:67px;
+	font-weight:normal;
+	display:inline;
+	
+	/* color:#4100B2 #1E1E85 #3F3491 #0E0E77 #007DEA;s*/
+	 /*color: #0C1161 #7A8F99*/
+
+}
+
+
+#log_out{
+	float:right;
+	padding-top:19px;
+	
+}
+
+
+
+
+/*=header end
+--------------------------------------------------------------------------------------------------------*/
+
+/*=content 
+--------------------------------------------------------------------------------------------------------*/
+#content{	
+	 position:relative; 
+	 background:#fff;
+	 border:1px dashed #f2d017;
+	 padding-bottom:20px;
+	
+}
+
+
+
+/*=loaders
+--------------------------------------------------------------------------------------------------------*/
+.hidden{
+	display:none;
+}
+#loading_screen{
+	background:url('o4.png');
+	z-index:999;
+	position:absolute;
+	width:958px;
+	height:623px;
+	font-family:'SketchRockwellRegular';
+	color:  #111;
+	font-size:28px;
+	
+}
+
+#win{
+	width:100%;
+	float:left;
+	text-align:center;	
+	margin:200px 5px 50px 5px;
+	
+}
+
+#win li {
+	float:left;
+	width:190px;
+	margin: 0 6px;
+
+}
+
+#win p{
+	font-weight:normal;
+	text-transform:none;
+	overflow:hidden;
+}
+#win #prize{
+	width:100px;
+
+}
+#win .name{
+	margin:0 auto;
+
+}
+
+#login{
+
+    position:relative;
+	top:40%;
+	text-align:center;
+	font-weight:normal;
+	
+}
+
+#loading_screen p {
+	padding:10px;
+
+}
+#account {
+
+    position:relative;
+	top:40%;
+	text-align:center;
+	font-weight:normal;
+	color:fff;
+	
+	
+
+}
+#account a{
+	cursor:pointer;
+}
+
+
+#loader {
+    position:relative;
+	top:40%;
+	text-align:center;
+	font-weight:normal;
+	}
+	
+#aside #loader{
+	margin-top:200px;
+}
+
+/*Choose ID sai vali konto div element, nii et pead natuke ümber nimetama elemente*/
+/*
+#choose  p {
+	position:relative;
+	width:100%;
+	text-align:center;
+	
+	
+}
+
+#choose a{
+
+	margin-left:110px;
+	font-weight:normal;
+	color:#000099;
+	font-size:16px;
+	text-transform:none;
+	text-shadow:0px 0px 1px #000099;
+	font-family: 'FuturaBook';
+	padding:4px 15px;
+	
+}
+
+#choose a:hover{
+	color:#fff;
+	background:#003366;
+	padding:4px 15px;
+
+}
+*/
+
+/*=loaders
+--------------------------------------------------------------------------------------------------------*/
+
+/*=esileht
+--------------------------------------------------------------------------------------------------------*/
+
+#aside{
+	float:left;
+	width:362px;
+	font-weight:bold;
+	font-family:'SketchRockwellRegular';
+	position:relative;
+	margin-left:20px;
+	text-align:center;
+}
+
+#a_login{
+	 margin-top:220px;	 
+	 font-size:28px;
+	 font-weight:normal;
+}
+
+#a_login p{
+       margin:25px;
+
+}
+
+#player{
+
+	margin:60px 0 40px 60px;
+	overflow:hidden;
+	font-weight:normal;
+	font-family: 'FuturaBook';
+	font-weight:bold;
+
+}
+
+
+#player .name{
+		padding-top:20px;
+
+}
+#player dt{
+	float:left;
+	
+}
+
+
+
+button{
+  display:inline-block;
+  background: #4162a8;
+  border-top: 1px solid #38538c;
+  border-right: 1px solid #1f2d4d;
+  border-bottom: 1px solid #151e33;
+  border-left: 1px solid #1f2d4d;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: inset 0 1px 8px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
+  -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
+  box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
+  color: #ffffaa;
+  font-family:'FuturaBook' ,Verdana, sans-serif;
+  font-size:14px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 20px 0 20px 8px;
+  padding: 6px 0 8px 0;
+  text-align: center;
+  text-shadow: 0px -1px 1px #1e2d4d;
+  width: 120px;
+  -webkit-background-clip: padding-box;
+   cursor: pointer;
+
+}
+
+button:hover {
+  -moz-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
+  -webkit-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
+  box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
+  cursor: pointer;
+}
+
+button:active {
+	margin-top:25px;
+  -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
+  -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
+  box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
+  cursor: pointer;
+}
+
+.own_game{
+	width:150px;
+	padding:2px 0 2px 0;
+	margin-left:150px;
+	-moz-box-shadow: inset 0 1px 2px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 2px 2px 1px #111;
+  -webkit-box-shadow: inset 0 1px 2px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 2px 2px 1px #111;
+  box-shadow: inset 0 1px 2px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 2px 2px 1px #111;
+ cursor: pointer;
+}
+
+.own_game:hover {
+  -moz-box-shadow: inset 0 0px 4px 1px #87adff, 0px 1px 0 #1d2c4d, 0 4px 0px #1f3053, 0 4px 4px 1px #111;
+  -webkit-box-shadow: inset 0 0px 4px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 4px 4px 1px #111;
+  box-shadow: inset 0 0px 4px 1px #87adff, 0px 1px 0 #1d2c4d, 0 4px 0px #1f3053, 0 4px 4px 1px #111;
+  cursor: pointer;
+}
+
+.own_game:active {
+  -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
+  -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
+  box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
+  cursor: pointer;
+}
+
+
+#message{
+	margin-top:20px;
+	color:#111;
+	font-family: Verdana;
+	font-size:10px;
+
+}
+
+
+/*=esileht end
+--------------------------------------------------------------------------------------------------------*/
+/*=manguleht
+--------------------------------------------------------------------------------------------------------*/
+
+
+#game_data, #picture{
+	float:left;
+	width:550px;
+	margin-left:5px;
+	margin-top:20px;
+	border-right:1px dashed #996666;
+	
+}
+
+#game_data{
+
+	background:url('jooned2.gif');
+	position:relative;
+	background-position:0 -36px;
+}
+
+#game_holder{
+	
+   width: 308px;
+   height: 326px;
+   margin:0 auto;
+  
+}
+
+
+#game_holder li {
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+#middle {
+	border: 2px dashed #111;
+}
+
+#top_middle, #bottom_middle {
+border-right: 2px dashed #111;
+border-left: 2px dashed #111;
+}
+
+#right_middle, #left_middle{
+border-top: 2px dashed #111;
+border-bottom: 2px dashed #111;
+}
+
+
+
+
+.move img{
+	position:relative;
+	display:block;
+	margin:0 auto;
+
+}
+#p1, #p2{
+	float:left;
+	margin:28px 0 14px 0;
+	text-align:left;
+	width:270px;
+	overflow:hidden;
+
+}
+
+
+
+dt {
+	float:left;
+	width:60px;
+	text-align:right;
+	height:16px;
+	padding:2px 0;
+}
+#p2 dt{
+	float:left;
+
+}
+dd{
+  margin-left:65px;
+  width:100px;
+  text-align:center;
+	height:16px;
+	padding:2px 0;
+	
+
+}
+
+
+#versus{
+	float:left;
+	margin-left:-28px;
+	margin-top:38px;
+
+}
+
+
+
+.image, .name{
+	height:48px;
+	font-size:18px;
+	text-align:center;
+	padding-bottom:5px;
+}
+.name{
+	margin-top:16px;
+	
+}
+.image{
+	padding-top:5px;
+
+}
+.role{
+	font-size:18px;
+	font-family:'SketchRockwellRegular';
+	text-align:center;
+
+
+}
+#p2 .role{
+	color:#000099;
+
+}
+
+#chat{
+	float:left;
+	width:362px;
+	margin:25px 10px 0 20px;
+	position:relative;
+}
+
+
+#chat_line{
+	height:415px;
+	overflow:auto;
+	border-top:#000099 1px dashed;
+	border-bottom:#000099 1px dashed;
+	margin-bottom:10px;
+
+}
+#chat_line li{
+	border-bottom: #000099 1px dashed;
+
+}
+#chat_line li.last{
+
+	border-bottom: none;
+}
+#chat_line p{
+	padding:0 0 5px;
+	overflow:hidden;
+	
+}
+.chat_name{
+	color:#000099;
+}
+textarea,.placeholder{
+	border: #000099 1px dashed;
+	height:50px;
+	background:#ffff66;
+	width:354px;
+	resize:none;
+	padding:4px;
+	font-style:italic;
+	color:#666;
+	
+	
+}
+
+textarea:hover{
+	border: #000099 1px solid;	
+	width:354px;
+}
+
+textarea:focus{
+	border: #000099 1px solid;  /*  #f2d017*/
+	background:#fcfef5;
+    font-size:14px;
+	font-family: 'FuturaBook',Arial;
+	font-size:14px;
+	font-weight:bold;
+	width:354px;
+	color:#111;
+	font-style:normal;
+	
+
+}
+#fans{
+	width:100px;
+	float:left;
+
+}
+#send{
+	float:left;
+	width:80px;
+	color:#ffffaa;
+	border: 1px dashed #ffff66;
+	text-shadow: 0px -1px 0px #000066;
+	background:#000099;
+	margin-top:6px;
+	margin-left:182px;
+	 cursor: pointer;
+	
+	}
+	
+
+
+
+#warning{
+
+	font-size:11px;
+	color:#ff6600;
+	
+	
+
+}
+
+
+#fans,#counter{
+	font-size:10px;
+	opacity:0.5;
+	filter:alpha(opacity=50)
+}
+
+#counter{
+	float:right;
+	opacity: .60; /* Standards Compliant Browsers */
+    filter: alpha(opacity=60); /* IE 7 and Earlier */
+    /* Next 2 lines IE8 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);*/
+}
+
+.like:hover,.twitter-share-button:hover{
+	opacity: 1; /* Standards Compliant Browsers */
+    filter: alpha(opacity=100); /* IE 7 and Earlier */
+    /* Next 2 lines IE8 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);*/
+}
+
+#share{
+	
+	position:relative;
+	float:right;
+	margin-right:-66px;
+	margin-top:40px;
+	overflow:hidden;
+	
+	}
+#share .p{
+	margin:5px 0;
+
+}
+/*=manguleht end
+--------------------------------------------------------------------------------------------------------*/
+/*=footer
+--------------------------------------------------------------------------------------------------------*/
+#footer{ 
+	width:960px;
+	height:40px;
+	padding-top:8px;
+	margin:0 auto;
+	position:absolute;
+
+}
+#info{
+	float:right;
+	margin-right:0;
+}
+
+#info li{
+	float:left;
+}
+
+#info li a{
+	padding-left:8px;
+	text-decoration:none;
+}
+
+#info li a, #info li a:visited{
+	opacity:0.4;
+	filter:alpha(opacity=40)
+
+}
+
+#info li a:active,#info li a:hover{
+	opacity:1;
+	filter:alpha(opacity=100)
+
+}
+
+#box{
+ height:10px;
+ width:10px;
+ background-color:green;
+ position:absolute;
+ display:none;
+ 
+
+}
+
+#tabs_list{
+	float:left;
+	height:24px;
+	width:100%;
+	list-style-type:none;
+	padding-bottom:40px;
+	
+}
+
+#tabs_list li{
+	float:left;
+	overflow:hidden;
+	border:dashed 1px red;
+	
+}
+#tabs_list li a{
+display:block;
+padding:5px;
+width:100px;
+	
+
+}
+#tabs_list li a, #tabs_list li a:visited{
+    background-color:#eee;	
+}
+
+#tabs_list li a:active, #tabs_list li a:hover  {
+	background-color:#aaa;
+}
+
+/*Täiendused avaleht*/
+
+/*Sisse logimise nupud*/
+#t_sign_in, #f_sign_in, #t_choose, #f_choose {
+	cursor: pointer;
+}
+
+#t_sign_in img {
+	position: relative;
+	top: 8px;
+}
+
+#t_sign_in {
+	margin-left: 5px;
+}
+
+#f_sign_in {
+	margin-right: 5px;
+}
+
