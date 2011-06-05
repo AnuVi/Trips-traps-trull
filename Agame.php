@@ -6,10 +6,10 @@
 <!-- meta tags -->
 <meta name="keywords" content="trips-traps-trull, game, tic-tac-toe">
 <meta name="description" content="Vana hea trips-traps-trull">
-<link rel="canonical" href="ttt.html">
+<link rel="canonical" href="index.html">
 <link rel="creator" href="about.html">
 <!-- stylesheets -->
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="gfx/style.css">
 <!--javascript-->
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript" src="general.js"></script>
