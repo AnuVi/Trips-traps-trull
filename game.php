@@ -45,7 +45,7 @@ if(!mysql_num_rows($result)) {
 				<p id="f_sign_in"><fb:login-button perms="publish_stream">Login with Facebook</fb:login-button></p>
 				<p id="f_sign_out"><button type="button">Sign out of Facebook</button></p>
 			</div>
-			<div id="choose" class="hidden">
+			<div id="game_end" class="hidden">
 				<p>Oled sisse logitud nii Twitter'isse, kui Facebook'i</p>
 				<p>Vali sotsiaalmeedia kasutaja, mida soovid mängu mängimiseks kasutada</p>
 				<p id="t_choose"><button type="button">Twitter</button></p>
