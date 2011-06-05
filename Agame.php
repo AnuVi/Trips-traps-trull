@@ -30,22 +30,22 @@
 				</div> <!--#login end-->
 				<div id="account" class="hidden"> 
 					<p>Vali konto:</p>
-					<p><a title="Twitter"><img alt="Twitter" height="64" width="64" src="gfx/Twitter.png"></a> 
-					<a title="Facebook"><img alt="Facebook" height="64" width="64" src="gfx/Facebook.png"></a></p>
+					<p><a title="Twitter"><img alt="Twitter"  src="gfx/Twitter.png"></a> 
+					<a title="Facebook"><img alt="Facebook"  src="gfx/Facebook.png"></a></p>
 				</div><!--#account end-->
 				<div id="loader" class="hidden">
 					<p>Ühendan</p>
-					<img src="gfx/loader.gif" alt="loader" height="64" width="64" alt="profile picture">
+					<img src="gfx/loader.gif" alt="loader" alt="profile picture">
 				</div><!--#loader end-->
 				<ol id="win" class="hidden">
 					<li>
-						<img src="http://placekitten.com/48/48" height="48" width="48" alt="profile picture">
+						<img src=""  alt="profile picture">
 						<p class="name">name gsjfsldkfj slfkjslfkj lfkjsdlf</p>
 						
 					</li>
-					<li id="prize"><img height="100" width="100" src="gfx/karikas.png" alt="prize"></li>
+					<li id="prize"><img  src="gfx/karikas.png" alt="prize"></li>
 					<li>
-						<img src="http://placekitten.com/48/48" height="48" width="48" alt="profile picture">
+						<img src="" alt="profile picture">
 						<p class="name">name</p>
 					</li>
 		
@@ -62,22 +62,22 @@
 					<div id="game_holder" class="clear">
 						<span id="box">&nbsp;</span>
 						<ul id="tic_tac_toe">
-						<li>&nbsp;</li>
-						<li id="top_middle">&nbsp;</li>
-						<li>&nbsp;</li>
-						<li id="left_middle"><img height="100" width="106" src="gfx/x1.gif" alt="x"></li>
-						<li id="middle"><img src="gfx/o3.gif" alt="0" width="106" height="100"></li>
-						<li id="right_middle">&nbsp;</li>
-						<li>&nbsp;</li>
-						<li id="bottom_middle">&nbsp;</li>
-						<li>&nbsp;</li>
+  						<li>&nbsp;</li>
+  						<li id="top_middle">&nbsp;</li>
+  						<li>&nbsp;</li>
+  						<li id="left_middle">&nbsp;</li>
+  						<li id="middle">&nbsp;</li>
+  						<li id="right_middle">&nbsp;</li>
+  						<li>&nbsp;</li>
+  						<li id="bottom_middle">&nbsp;</li>
+  						<li>&nbsp;</li>
 						</ul><!--#tic_tac_toer end-->
 					</div><!--#game_holder-->
 				</div><!--#game_end-->
 				<dl id="p1" class="clear">
-					<dt class="move"><img alt="arrow" src="gfx/nool.png" width></dt>
+					<dt class="move"><img alt="arrow" src="gfx/nool.png" ></dt>
 					<dd class="role">X</dd>
-					<dt class="image"><img src="http://placekitten.com/48/48" width="48" height="48" alt="profile picture"></dt>
+					<dt class="image"><img src=""  alt="profile picture"></dt>
 					<dd class="name">Player1</dd>
 					<dt>Mänge:</dt>
 					<dd id="p1_total">0</dd>
@@ -89,9 +89,9 @@
 					<dd id="p1_draws">0</dd>
 				</dl>
 				<dl id="p2" class="clear">
-					<dt class="move"><img alt="arrow" src="gfx/nool.png" width="15" height="15"></dt>
+					<dt class="move"><img alt="arrow" src="gfx/nool.png"></dt>
 					<dd class="role">O</dd>
-					<dt class="image"><img src="http://placekitten.com/48/48" alt="profile picture"></dt>
+					<dt class="image"><img src="" alt="profile picture"></dt>
 					<dd class="name">Player2</dd>
 					<dt>Mänge:</dt>
 					<dd id="p2_total">0</dd>
@@ -135,8 +135,8 @@
 		<div id="footer">
 			<ul id="info">
 				<li><a  rel="next" href="" title="Kes? Mis?">Kes? Mis?</a></li>
-				<li><a  rel="next" href="" title="Trips-traps-trull Twitteris"><img alt="Twitter logo" height="16" width="16" src="gfx/tw.jpeg"></a></li>
-				<li><a  rel="next" href="" title="Trips-traps-trull Facebookis"><img alt="Facebook logo" height="16" width="16" src="gfx/fb.jpeg"></a></li>
+				<li><a  rel="next" href="" title="Trips-traps-trull Twitteris"><img alt="Twitter logo"  src="gfx/tw.jpeg"></a></li>
+				<li><a  rel="next" href="" title="Trips-traps-trull Facebookis"><img alt="Facebook logo"  src="gfx/fb.jpeg"></a></li>
 			</ul><!--#info end-->
 		</div><!--#footer end-->
 	</div><!--#wrap end-->

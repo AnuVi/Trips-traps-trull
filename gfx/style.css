@@ -105,7 +105,54 @@ img {
 /*=fonts end 
 --------------------------------------------------------------------------------------------------------*/
 
+/*=img
+--------------------------------------------------------------------------------------------------------*/
+#picture game{
+	height:480px;
+	width:550px;
+}
 
+#loader img, #choose img,#account img{
+	height:64px;
+	width:64px;
+
+}
+
+
+#t_sign_in img{
+	height:24px;
+	width:151px;
+}
+
+#player img, #win img, #p1.image, #p2.image{
+	height:48px;
+	width:48px;
+
+}
+
+#prize img{
+	height:100px;
+	width:100px;
+
+}
+
+#left_middle img{
+	height:106px;
+	width:100px;
+
+}
+
+#p1.move, #p2.move{
+	height:15px;
+	width:15px;
+}
+#info img{
+	width:16px;
+	height:16px;
+
+}
+/*=img end
+--------------------------------------------------------------------------------------------------------*/
 a{
 	text-decoration:none;
 	color:#95D3E7;
@@ -171,7 +218,10 @@ h1{
 	
 }
 
+#header button{
+   margin-top:-5px;
 
+}
 
 
 /*=header end
@@ -265,7 +315,7 @@ h1{
 
 
 #loader {
-    position:relative;
+  position:relative;
 	top:40%;
 	text-align:center;
 	font-weight:normal;
@@ -280,7 +330,6 @@ h1{
 	position:relative;
 	width:100%;
 	text-align:center;
-	
 	
 }
 
@@ -303,6 +352,7 @@ h1{
 	padding:4px 15px;
 
 }
+
 
 
 /*=loaders
@@ -355,7 +405,7 @@ h1{
 
 
 button{
-  display:inline-block;
+ 
   background: #4162a8;
   border-top: 1px solid #38538c;
   border-right: 1px solid #1f2d4d;
@@ -383,6 +433,7 @@ button{
 }
 
 button:hover {
+
   -moz-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
   -webkit-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
   box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111;
@@ -390,7 +441,8 @@ button:hover {
 }
 
 button:active {
-	margin-top:25px;
+
+	margin-top:22px;
   -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
   -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
   box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111;
@@ -398,19 +450,19 @@ button:active {
 }
 
 .own_game{
-	width:150px;
+	width:190px;
 	padding:2px 0 2px 0;
-	margin-left:150px;
-	-moz-box-shadow: inset 0 1px 2px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 2px 2px 1px #111;
-  -webkit-box-shadow: inset 0 1px 2px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 2px 2px 1px #111;
-  box-shadow: inset 0 1px 2px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 2px 2px 1px #111;
- cursor: pointer;
+	margin-left:110px;
+ -moz-box-shadow: inset 0 0px 2px 1px #87adff, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 4px 4px 1px #111;
+  -webkit-box-shadow: inset 0 0px 2px 1px #87adff, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 4px 4px 1px #111;
+  box-shadow: inset 0 0px 2px 1px #87adff, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 4px 4px 1px #111;
+  cursor: pointer;
 }
 
 .own_game:hover {
-  -moz-box-shadow: inset 0 0px 4px 1px #87adff, 0px 1px 0 #1d2c4d, 0 4px 0px #1f3053, 0 4px 4px 1px #111;
-  -webkit-box-shadow: inset 0 0px 4px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 4px 4px 1px #111;
-  box-shadow: inset 0 0px 4px 1px #87adff, 0px 1px 0 #1d2c4d, 0 4px 0px #1f3053, 0 4px 4px 1px #111;
+ -moz-box-shadow: inset 0 0px 2px 1px #87adff, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 4px 4px 1px #111;
+  -webkit-box-shadow: inset 0 0px 2px 1px #87adff, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 4px 4px 1px #111;
+  box-shadow: inset 0 0px 2px 1px #87adff, 0px 1px 0 #1d2c4d, 0 2px 0px #1f3053, 0 4px 4px 1px #111;
   cursor: pointer;
 }
 
@@ -790,3 +842,15 @@ width:100px;
 	margin-right: 5px;
 }
 
+.add_x{
+   background-image:url('x.gif');
+
+
+}
+
+.add_y{
+    background-image:url('o.gif');
+
+
+
+}
