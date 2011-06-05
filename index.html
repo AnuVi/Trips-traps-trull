@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Trips-traps-trull</title>
+<!-- meta tags -->
+<meta name="keywords" content="trips-traps-trull, game, tic-tac-toe">
+<meta name="description" content="Vana hea trips-traps-trull">
+<link rel="canonical" href="index.html">
+<link rel="creator" href="about.html">
+
+<!-- stylesheets -->
+<link rel="stylesheet" type="text/css" href="gfx/style.css">
+<!--javascript-->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script src="http://platform.twitter.com/anywhere.js?id=luncBP1bH8ae5Qai9hrGjA&amp;v=1"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script src="general.js"></script>
+<script>
+google.load("jquery", "1.6.0")
+google.setOnLoadCallback(function () {
+var t_sign_in = $('#t_sign_in');
+var f_sign_in = $('#f_sign_in');
+var log_out = $('#log_out');
+var a_login = $('#a_login');
+var logged_in = $('#logged_in');
+var choose_html = $('#choose');
+var t_choose = $('#t_choose');
+var f_choose = $('#f_choose');
+var new_game = $('#start_game');
+var loader = $('#loader');
+var currentUser;
+var id;
+var name;
+var player_score;
+var player_total = $('#p1_total');
+var player_wins = $('#p1_wins');
+var player_loses = $('#p1_loses');
+var player_draws = $('#p1_draws');
+var player_img = $('#player img');
+var player_name = $('#player .name');
+var f_login = false;
+var t_login = false;
+
+	FB.init({ 
+		appId:'153825388016843',
+		cookie:true, 
+        status:true,
+        xfbml:true,
+	});
+	
+	function choose() {
+		logged_in.hide();
+		choose_html.fadeIn(500);
+	}
+	
+	function add_user_data() {
+		if(id.length < 15) {
+			player_img.attr("src", "http://api.twitter.com/1/users/profile_image/"+name+".json?size=normal");
+		} else {
+			player_img.attr("src", "http://graph.facebook.com/"+id+"/picture?type=square");
+		}
+		
+		player_name.text(name);
+		
+		$.post('functions.php', {a:5, id:id}, function(data) {
+			var obj = $.parseJSON(data);
+			player_score = obj.player_score;
+			
+			player_total.text(player_score[3]);
+			player_wins.text(player_score[0]);
+			player_loses.text(player_score[1]);
+			player_draws.text(player_score[2]);		
+		});
+	}
+	
+	twttr.anywhere(function(t) {	
+		function f_connection() {
+			FB.getLoginStatus(function(response) {
+				if(response.session) {
+					f_login = true;
+					loader.hide();
+					a_login.hide();
+					if(!t_login) {
+						log_out.fadeIn(500);
+						choose_html.hide();
+						logged_in.fadeIn(500);
+						id = response.session.uid;
+						FB.api('/me', function(response) {
+							name = response.name;
+							add_user_data();
+						});
+						//Siia tuleb ajax request, et mängija andmed saada
+					} else {
+						choose();
+					}
+				} else {
+					t_connection();
+				}
+				
+			});
+		}
+		
+		function t_connection() {
+			if (t.isConnected()) {
+				t_login = true;
+				loader.hide();
+				a_login.hide();
+				if(!f_login) {
+					log_out.fadeIn(500);
+					choose_html.hide();
+					logged_in.fadeIn(500);
+					currentUser = t.currentUser;
+					id = currentUser.data('id');
+					name = currentUser.data('screen_name');
+					add_user_data();
+					//Siia tuleb ajax request, et mängija andmed saada
+					
+				} else {
+					choose();
+				}
+			} else {
+				logged_in.hide();
+				loader.hide();
+				a_login.fadeIn(500);
+			}
+		}
+		
+		if(t.isConnected()) {
+			t_login = true;
+		}
+		
+		f_connection();
+		
+		t_sign_in.click(function() {
+			t.signIn();
+		});
+		
+		t.bind('authComplete', function() {
+			t_login = true;
+			t_connection();
+			
+			console.log('ok');
+		});
+		
+		t.bind('signOut', function() {
+			t_login = false;
+			t_connection();
+		});
+		
+		f_choose.click(function() {
+			twttr.anywhere.signOut();
+			f_connection();
+		});
+		
+		t_choose.click(function() {
+			FB.logout(function(response) {
+				t_connection();
+			});
+		});
+		
+		log_out.click(function() {
+			if (t.isConnected()) {
+				twttr.anywhere.signOut();
+				t_connection();
+			} else {
+				FB.logout(function(response) {});
+			}
+		});
+		
+		FB.Event.subscribe('auth.login', function(response) {  
+			f_login = true;
+			f_connection();
+		});
+		
+		FB.Event.subscribe('auth.logout', function(response) {
+			f_login = false;
+			f_connection();
+		});
+	});
+ 
+	new_game.click(function(event) {
+		event.preventDefault();
+		$.post('functions.php', {a:2, id:id}, function(data) {
+			window.location = "http://ikt.khk.ee/chris.kuusmann/ttt/game.php?game_room"+data;
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<div id="wrap" class="clear">
+		<div id="header" class="clear">
+			<h1>Trips-traps-trull</h1>
+			<span id="log_out" class="hidden"><a href="#" title="Logi välja" rel="start">Logi välja</a></span>
+		</div><!--#header end-->
+		<div id="content"  class="clear">
+			<div id="picture" class="clear">
+				<img alt="game" src="gfx/trips.png" height="480" width="550">
+			</div><!--#picture end-->
+			<div id="aside" class="clear">
+				<div id="loader">
+					<img src="gfx/loader.gif" alt="Laadimine" height="64" width="64">
+				</div>
+				<div id="a_login" class="hidden">
+					<p>Logi sisse:</p>
+					<p>
+						<div id="fb-root"></div>
+						<span id="f_sign_in" title="Logi sisse Facebook'iga"><fb:login-button perms="publish_stream">Login with Facebook</fb:login-button></span>
+						<span id="t_sign_in" title="Logi sisse Twitter'iga"><img height="24" width="151" alt="Twitter login" src="gfx/twitter.png"></span>
+					</p>
+				</div>
+				<div id="logged_in" class="hidden">
+					<dl id="player" class="clear">
+						<dt class="image"><img src="http://placekitten.com/48/48"></dt>
+						<dd class="name">Player</dd>
+						<dt>Mänge:</dt>
+						<dd id="p1_total">0</dd>
+						<dt>Võite:</dt>
+						<dd id="p1_wins">0</dd>
+						<dt>Kaotusi:</dt>
+						<dd id="p1_loses">0</dd>
+						<dt>Viike:</dt>
+						<dd id="p1_draws">0</dd>
+					</dl>
+					<button id="start_game" type="button">Uus mäng</button>
+				</div>
+				<p id="message">Kutse mängu ning teated mängu algusest ning lõpust saadetakse Sinu Twitteri voogu või Facebooki seinale.</p>
+				<div id="choose" class="hidden"> 
+					<p>Vali konto:</p>
+					<p><a id="t_choose" title="Vali Twitter"><img alt="Twitter" height="64" width="64" src="gfx/twitter_c.png"></a> 
+					<a id="f_choose" title="Vali Facebook"><img alt="Facebook" height="64" width="64" src="gfx/facebook_c.png"></a></p>
+				</div><!--#choose end-->
+			</div><!--#aside end-->
+			<div id="share">
+				<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="Tic-tac-toe game">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></p>
+				<p><iframe class="like"  src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fikt.khk.ee%2F%7Echris.kuusmann%2Fttt%2Fgame.php&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:20px;" allowTransparency="true"></iframe></p>
+			</div><!--#share end-->
+		</div><!--#content end-->
+		<div id="footer">
+			<ul id="info">
+				<li><a  rel="next" href="" title="Kes? Mis?">Kes? Mis?</a></li>
+				<li><a  rel="next" href="" title="Trips-traps-trull Twitteris"><img alt="Twitter logo" height="16" width="16" src="gfx/tw.jpeg"></a></li>
+				<li><a  rel="next" href="" title="Trips-traps-trull Facebookis"><img alt="Facebook logo" height="16" width="16" src="gfx/fb.jpeg"></a></li>
+			</ul><!--#info end-->
+		</div><!--#footer end-->
+	</div><!--#wrap end-->
+</body>
+</html>
+
