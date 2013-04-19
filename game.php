@@ -6,9 +6,9 @@ $arr = preg_split('/\?/', $url);
 $channel = $arr[1];
 $_SESSION['game_room'] = $channel;
 $_SESSION['link'] = $link;
-$conn = mysql_pconnect('localhost','chriskuusmann','hahched2');
+$conn = mysql_pconnect('localhost','','');
 //Andmebaasi valimine
-mysql_select_db('chriskuusmann_DB');
+mysql_select_db('');
 $query = "SELECT * FROM games WHERE game_channel = '".$channel."'";
 $result = mysql_query($query, $conn);
 if(!mysql_num_rows($result)) {

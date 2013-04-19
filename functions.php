@@ -14,8 +14,8 @@ function generate_nr() {
 }
 
 
-$conn = mysql_pconnect('localhost','chriskuusmann','hahched2');
-mysql_select_db('chriskuusmann_DB');
+$conn = mysql_pconnect('localhost','','');
+mysql_select_db('');
 $move_on = true;
 
 if(isset($_POST['a'])) {

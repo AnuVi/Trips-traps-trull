@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="et" dir="ltr">
 <head>
 <meta charset="utf-8">
 <title>Trips-traps-trull</title>
